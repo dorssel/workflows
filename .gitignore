@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2023 Frans van Dorsselaer
+#
+# SPDX-License-Identifier: MIT
+
+bin/
+obj/
+packages/
+.vs/
+.vscode/
+*.user
+*.lutconfig
+launchSettings.json

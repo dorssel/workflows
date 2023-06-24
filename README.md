@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2023 Frans van Dorsselaer
+
+SPDX-License-Identifier: MIT
+-->
+
 # workflows
 
 Reusable workflows for @dorssel.

@@ -9,10 +9,10 @@ name: REUSE
 
 on:
   workflow_call:
-  # push:
-  #  branches: [$default-branch]
-  # pull_request:
-  #  branches: [$default-branch]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 permissions: read-all
 
