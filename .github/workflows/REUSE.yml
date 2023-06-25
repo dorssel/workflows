@@ -8,11 +8,8 @@
 name: REUSE
 
 on:
+  # Support reusing this workflow.
   workflow_call:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
 
 permissions:
   contents: read
