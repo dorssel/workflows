@@ -12,7 +12,9 @@ on:
   workflow_call:
   # No need to run this workflow on this repo itself.
 
-permissions: read-all
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
   check:
