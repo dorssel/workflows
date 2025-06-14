@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2025 Frans van Dorsselaer
+#
+# SPDX-License-Identifier: MIT
+
+---
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Update Common Files
+
+on:
+  # Support reusing this workflow ...
+  workflow_call:
+  # No need to run this workflow on this repo itself.
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for new .editorconfig
+        run: |
+          curl --fail --remote-name https://raw.githubusercontent.com/dorssel/workflows/refs/heads/main/.editorconfig
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'Update common files'
+          title: 'Update common files'
+          branch: update-common-files
+          body: |
+            This is an automated pull request, updating common files after a detected change
+            in https://github.com/dorssel/workflows.
+          sign-commits: true
