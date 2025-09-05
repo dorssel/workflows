@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: martincostello/update-dotnet-sdk@v3
+      - uses: martincostello/update-dotnet-sdk@v4
 
         with:
           labels: dependencies
